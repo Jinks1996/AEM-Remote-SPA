@@ -1,0 +1,23 @@
+include:
+  - project: 'web/sre_chapter/gitlab_cicd_pipelines'
+    ref: 'main'
+    file: '/pipelines/spa/standard-spa.yml'
+
+variables:
+  NODE_VERSION: '16'
+  PNPM_VERSION: '8.3.1'
+
+dev-code:
+  variables:
+    CI: 'false'
+    DEPLOY_ROOT: './build'
+
+test-code:
+  variables:
+    CI: 'false'
+    DEPLOY_ROOT: './build'
+
+prod-code:
+  variables:
+    CI: 'false'
+    DEPLOY_ROOT: './build'
